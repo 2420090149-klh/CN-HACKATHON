@@ -1,0 +1,61 @@
+Metadata-Version: 2.4
+Name: phishing-link-detector
+Version: 0.1.0
+Summary: A Streamlit app that scores URLs for phishing and scam indicators.
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: streamlit>=1.36.0
+Provides-Extra: dev
+Requires-Dist: pytest>=8.0.0; extra == "dev"
+
+# Phishing Link Detector
+
+A small Streamlit app that checks a URL for common phishing and scam indicators. It gives you a risk score, a plain-English verdict, and the specific signals that influenced the result.
+
+## Features
+
+- Fast heuristic analysis with no training data required
+- Clear explanation of suspicious signals
+- Modern Streamlit UI for quick manual checks
+- Testable core logic so you can extend it later with machine learning
+
+## How it works
+
+The detector scores a link using transparent signals such as:
+
+- IP-address hosts
+- punycode and lookalike domains
+- URL shorteners
+- suspicious keywords like `login`, `verify`, or `password`
+- long paths, long query strings, and excessive subdomains
+- brand-impersonation patterns
+
+## Run it
+
+Install Python 3.10 or newer, then install dependencies:
+
+```bash
+pip install -e .
+```
+
+Start the app:
+
+```bash
+streamlit run app.py
+```
+
+Run the tests:
+
+```bash
+pytest
+```
+
+## Project structure
+
+- `app.py` - Streamlit UI
+- `src/phish_detector/analyzer.py` - URL scoring logic
+- `tests/test_analyzer.py` - basic behavior checks
+
+## Notes
+
+This project is a screening tool, not a guarantee. Users should still verify the destination before entering passwords, payment details, or one-time codes.

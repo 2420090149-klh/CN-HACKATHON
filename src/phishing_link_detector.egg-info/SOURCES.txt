@@ -1,0 +1,10 @@
+README.md
+pyproject.toml
+src/phish_detector/__init__.py
+src/phish_detector/analyzer.py
+src/phishing_link_detector.egg-info/PKG-INFO
+src/phishing_link_detector.egg-info/SOURCES.txt
+src/phishing_link_detector.egg-info/dependency_links.txt
+src/phishing_link_detector.egg-info/requires.txt
+src/phishing_link_detector.egg-info/top_level.txt
+tests/test_analyzer.py
